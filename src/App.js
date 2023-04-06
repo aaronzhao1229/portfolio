@@ -1,6 +1,6 @@
-import logo from './logo.svg'
+
 import './App.css'
-import Header from './component/Header'
+import Header from './components/Header'
 import { Container } from '@mui/material'
 
 function App() {
