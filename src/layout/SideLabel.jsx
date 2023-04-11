@@ -10,24 +10,25 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 export default function SideLabel() {
   
   return (
-    <Stack direction="row"  sx={{display: { xs: 'none', md: 'flex' }}}  >
-      <Paper sx={{mt: 20, p: 0}} >
-        <MenuList sx={{'& :hover': {color: 'secondary.main' }}}>
-          <MenuItem >
-            <LinkedInIcon fontSize='large' sx={{mt: 1, mb: 1}}/>
-          </MenuItem>
+    
+      <Stack direction="row"  sx={{display: { xs: 'none', md: 'flex' }}}>
+        <Paper sx={{mt: 20, p: 0}} >
+          <MenuList sx={{'& :hover': {color: 'secondary.main' }}}>
+            <MenuItem >
+              <LinkedInIcon fontSize='large' sx={{mt: 1, mb: 1}}/>
+            </MenuItem>
 
-          <MenuItem>
-            <GitHubIcon fontSize='large' sx={{mt: 1, mb: 1}} />
-          </MenuItem>
-         
-          <MenuItem>
-            <YouTubeIcon fontSize='large' sx={{mt: 1, mb: 1}} />
-          </MenuItem>
-        </MenuList>
-      </Paper>
-      
- 
-    </Stack>
+            <MenuItem>
+              <GitHubIcon fontSize='large' sx={{mt: 1, mb: 1}} />
+            </MenuItem>
+          
+            <MenuItem>
+              <YouTubeIcon fontSize='large' sx={{mt: 1, mb: 1}} />
+            </MenuItem>
+          </MenuList>
+        </Paper>
+        
+      </Stack>
+    
   );
 }

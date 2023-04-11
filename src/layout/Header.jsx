@@ -10,12 +10,13 @@ import Container from '@mui/material/Container'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
+import { useNavigate } from 'react-router-dom'
 
 const pages = ['Home', 'About', 'Projects', 'Contact']
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
-
+  const navigate = useNavigate()
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -24,8 +25,15 @@ function ResponsiveAppBar() {
     setAnchorElNav(null)
   }
 
+  const navigateTo = (page) => {
+      if (page === 'Home') {
+        navigate(`/`)
+      } else {
+      navigate(`${page.toLowerCase()}`)}
+  }
+
   return (
-    <AppBar position="static">
+    <AppBar position="static" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
@@ -92,7 +100,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               // <Tooltip key={page} disableHoverListener title="Add">
                 <Button
-                  onClick={handleCloseNavMenu}
+                  onClick={() => navigateTo(page)}
                   sx={{ color: 'primary.contrastText', '& :hover': { color: 'secondary.main' },display: 'block', fontWeight: 'bold', pr: 2, fontSize: 'body1.fontSize' }}
                 >
                   <Typography sx={{

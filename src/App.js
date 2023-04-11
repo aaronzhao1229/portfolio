@@ -1,5 +1,5 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import HomePage from './components/HomePage'
 import Header from './layout/Header'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 
@@ -16,14 +16,26 @@ const theme = createTheme({
     secondary: {
       light: '#ffecb3',
       main: '#ffc107',
-      dark: '#ba000d',
+      dark: '#ff9800',
       contrastText: '#000',
-    },
-    background: {
-      default: '#e0e0e0'
-  }
-  },
-})
+    }
+  //   background: {
+  //     default: '#e0e0e0'
+  // },
+  
+      },
+      components: {
+        MuiCssBaseline: {
+          styleOverrides: {
+            body: {
+              backgroundColor: '#e0e0e0',
+              backgroundImage: 'linear-gradient(90deg,  #fff3e0 5%, #eeeeee 50%, #eeeeee, 70%, #fff3e0 100%)'
+            },
+          }
+    }},
+  
+  } 
+)
 
 function App() {
   return (
@@ -32,7 +44,7 @@ function App() {
       <CssBaseline />
       <Header />
       
-      <HomePage />
+      <Outlet />
       
       
     </ThemeProvider>
