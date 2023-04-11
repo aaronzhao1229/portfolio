@@ -29,24 +29,27 @@ function ResponsiveAppBar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
-            {/* <Tooltip title="Open settings"> */}
+            
 
-            <IconButton sx={{ p: 0 }}>
+            <IconButton >
               <Avatar alt="Aaron Zhao" src="/images/profile.jpeg" />
             </IconButton>
-            <Button>
-              <Typography
-                variant="body1"
+            <Button variant="body1"
                 sx={{
                   my: 2,
-                  color: 'white',
-                  display: { xs: 'none', md: 'flex' },
+                  color: 'primary.contrastText',
+                  display: { xs: 'none', md: 'flex', fontWeight: 'bold' },
+                  pl: 2,
+                }}>
+              <Typography variant="body1"
+                sx={{
+                  fontWeight: 'bold'
                 }}
               >
                 Aaron Zhao
               </Typography>
             </Button>
-            {/* </Tooltip> */}
+           
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -87,13 +90,18 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+              // <Tooltip key={page} disableHoverListener title="Add">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ color: 'primary.contrastText', '& :hover': { color: 'secondary.main' },display: 'block', fontWeight: 'bold', pr: 2, fontSize: 'body1.fontSize' }}
+                >
+                  <Typography sx={{
+                  fontWeight: 'bold'
+                }}>
+                    {page}
+                  </Typography>
+                </Button>
+              // </Tooltip>
             ))}
           </Box>
         </Toolbar>

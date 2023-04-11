@@ -1,14 +1,41 @@
-
 import './App.css'
-import Header from './components/Header'
-import { Container } from '@mui/material'
+import HomePage from './components/HomePage'
+import Header from './layout/Header'
+import { ThemeProvider, CssBaseline } from '@mui/material'
+
+import { createTheme } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#fafafa',
+      main: '#fff',
+      dark: '#e0e0e0',
+      contrastText: '#3c3c3c',
+    },
+    secondary: {
+      light: '#ffecb3',
+      main: '#ffc107',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+    background: {
+      default: '#e0e0e0'
+  }
+  },
+})
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
+      
+      <CssBaseline />
       <Header />
-      <Container>Hey world!</Container>
-    </div>
+      
+      <HomePage />
+      
+      
+    </ThemeProvider>
   )
 }
 
