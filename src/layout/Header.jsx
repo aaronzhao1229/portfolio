@@ -26,38 +26,42 @@ function ResponsiveAppBar() {
   }
 
   const navigateTo = (page) => {
-      if (page === 'Home') {
-        navigate(`/`)
-      } else {
-      navigate(`${page.toLowerCase()}`)}
+    if (page === 'Home') {
+      navigate(`/`)
+    } else {
+      navigate(`${page.toLowerCase()}`)
+    }
   }
 
   return (
     <AppBar position="static" elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: 'flex' }}>
-            
-
-            <IconButton >
+          <Box
+            onClick={() => navigate(`/about`)}
+            sx={{ flexGrow: 1, display: 'flex' }}
+          >
+            <IconButton>
               <Avatar alt="Aaron Zhao" src="/images/profile.jpeg" />
             </IconButton>
-            <Button variant="body1"
+            <Button
+              variant="body1"
+              sx={{
+                my: 2,
+                color: 'primary.contrastText',
+                display: { xs: 'none', md: 'flex', fontWeight: 'bold' },
+                pl: 2,
+              }}
+            >
+              <Typography
+                variant="body1"
                 sx={{
-                  my: 2,
-                  color: 'primary.contrastText',
-                  display: { xs: 'none', md: 'flex', fontWeight: 'bold' },
-                  pl: 2,
-                }}>
-              <Typography variant="body1"
-                sx={{
-                  fontWeight: 'bold'
+                  fontWeight: 'bold',
                 }}
               >
                 Aaron Zhao
               </Typography>
             </Button>
-           
           </Box>
           <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -99,16 +103,25 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               // <Tooltip key={page} disableHoverListener title="Add">
-                <Button
-                  onClick={() => navigateTo(page)}
-                  sx={{ color: 'primary.contrastText', '& :hover': { color: 'secondary.main' },display: 'block', fontWeight: 'bold', pr: 2, fontSize: 'body1.fontSize' }}
+              <Button
+                onClick={() => navigateTo(page)}
+                sx={{
+                  color: 'primary.contrastText',
+                  '& :hover': { color: 'secondary.main' },
+                  display: 'block',
+                  fontWeight: 'bold',
+                  pr: 2,
+                  fontSize: 'body1.fontSize',
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontWeight: 'bold',
+                  }}
                 >
-                  <Typography sx={{
-                  fontWeight: 'bold'
-                }}>
-                    {page}
-                  </Typography>
-                </Button>
+                  {page}
+                </Typography>
+              </Button>
               // </Tooltip>
             ))}
           </Box>
