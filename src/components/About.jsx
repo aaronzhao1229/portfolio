@@ -1,23 +1,71 @@
-import { Container, Typography } from "@mui/material";
+import { Container, Grid, Typography, Divider, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import {Link} from 'react-router-dom'
+
+const skills = ['JavaScript (ES6+)', 'TypeScript','Node.js', 'C#', '.NET framework', 'React', 'Redux', 'MobX', 'Axios', 'Express.js', 'Jest', 'Supertest', 'Testing library', 'nock' ]
 
 export default function About() {
-    return (
-      <Container>
-        <Typography>
-          In case someone is confused by my name, it is Jian Zhao officially, while I use Aaron as my English name for convenience.
-        </Typography>
-        <Typography>
-        I worked as an Acoustic Engineer for 5 years after completing my studies for a Master of Engineering Studies at The University of Auckland, and am looking for the chance for my career change to the IT field.
+  return (
+    <Container sx={{ pt: 10 }}>
+      <Grid container>
+        <Grid item xs={12} align="center" sx={{pb: 2}}>
+          <Typography variant="h4" sx={{ fontWeight: 'bold', pb: 2 }}>
+            About Me
+          </Typography>
+          <Divider sx={{ backgroundColor: 'secondary', borderBottomWidth: 5, borderBottomLength: 10, borderBottomColor: 'secondary.main'}} />
+        </Grid>
 
-        After working as an Acoustic Engineer for 5 years, I was aware that acoustic engineering was not what I was interested in and seeking a career change. After talking to a career consultant, programming/coding is on the top of the career list which I want to get into.
-
-        Whilst my studies are not specific to software development, they involved programming with coding languages including C++ and Matlab. When I coded during my studies at the university, I often lost track of time and realised I was passionate about coding, although this is a field that I was not familiar with.
-
-        Currently, I am studying a web development course at Enspiral Dev Academy. Associated languages include JavaScript, HTML and CSS.
-        </Typography>
-        <Typography>
-        Apart from technology, I also love outdoor activities, such as tramping, snowboarding, surfing, tennis, mountaineering and the like. An achievement which I am proud of is the completion of Te Araroa south island part  with an extension to Stewart Island. It took me 65 days to complete. If you ask me about it, I will say "it is a fantastic journey and worth all the efforts. If you want to walk it, don’t hesitate and go ahead. Never too late.”
-        </Typography>
-      </Container>
-    )
+        <Grid item xs={12} md={6} sx={{pb: 2}}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 3 }}>
+            Get to know me
+          </Typography>
+          <Typography variant="h6" sx={{pb: 2}}>
+              A highly motivated <span style={{color: '#ff9800', fontWeight: 'bold'}}>full stack software developer</span> with a passion for technology and a track record of success in agile project management. Equipped with strong technical skills and a background in engineering, I am taking on new challenges and enhance my experience as a software developer.
+          </Typography>
+          <Typography variant="h6" sx={{pb: 2}}>
+            After finishing a web development course at Dev Academy, I am doing freelance work as a software developer. Please check out some of work in the <Link to='/projects' style={{color: '#ff9800', fontWeight: 'bold', textDecoration: 'none'}}>Projects</Link> section
+          </Typography>
+          <Typography variant="h6" sx={{pb: 2}}>
+            Apart from technology, I also love outdoor activities, such as
+            tramping, snowboarding, surfing, tennis, mountaineering and the
+            like. An achievement which I am proud of is the completion of Te
+            Araroa south island part with an extension to Stewart Island. It
+            took me 65 days to complete. If you ask me about it, I will say "it
+            is a fantastic journey and worth all the efforts. If you want to
+            walk it, don’t hesitate and go ahead. Never too late.”
+          </Typography>
+        </Grid>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={12} md={5}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 3 }}>
+            Skills
+          </Typography>
+          <Grid container spacing={2} xs={12} sx={{pb: 3}}>
+            {skills.map((skill) => (
+                <Grid item xs={4} key={skill}>
+                    <Box sx={{backgroundColor: 'primary.dark', borderRadius: '10px'}} align='center'>
+                        <Typography sx={{p: 2}}>{skill}</Typography>
+                    </Box>
+                 </Grid>
+            ))}
+          </Grid>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 1 }}>
+            Certification
+          </Typography>
+          <List sx={{ width: '100%', maxWidth: 360, pb: 2 }}
+      aria-label="contacts"
+    >
+      <ListItem disablePadding>
+        
+          <ListItemIcon>
+            <ArrowRightIcon sx={{color: 'secondary.main'}}/>
+          </ListItemIcon>
+          <ListItemText primary="AWS Certified Cloud Practitioner" />
+        
+      </ListItem>
+      </List>
+        </Grid>
+      </Grid>
+    </Container>
+  )
 }
