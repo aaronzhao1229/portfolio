@@ -1,5 +1,5 @@
 import SideLabel from '../layout/SideLabel'
-import { Button, Container, Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 
 export default function HomePage() {
   return (

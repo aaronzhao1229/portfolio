@@ -52,18 +52,16 @@ export default function About() {
           <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 1 }}>
             Certification
           </Typography>
-          <List sx={{ width: '100%', maxWidth: 360, pb: 2 }}
-      aria-label="contacts"
-    >
-      <ListItem disablePadding>
-        
-          <ListItemIcon>
-            <ArrowRightIcon sx={{color: 'secondary.main'}}/>
-          </ListItemIcon>
-          <ListItemText primary="AWS Certified Cloud Practitioner" />
-        
-      </ListItem>
-      </List>
+          <List sx={{ width: '100%', maxWidth: 360, pb: 2 }} aria-label="contacts">
+              <ListItem disablePadding>
+                
+                  <ListItemIcon>
+                    <ArrowRightIcon sx={{color: 'secondary.main'}}/>
+                  </ListItemIcon>
+                  <ListItemText primary="AWS Certified Cloud Practitioner" />
+                
+              </ListItem>
+          </List>
         </Grid>
       </Grid>
     </Container>
