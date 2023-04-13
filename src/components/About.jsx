@@ -1,10 +1,11 @@
-import { Container, Grid, Typography, Divider, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import { Container, Grid, Typography, Divider, Box, List, ListItem, ListItemIcon, ListItemText, Button } from '@mui/material'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const skills = ['JavaScript (ES6+)', 'TypeScript','Node.js', 'C#', '.NET framework', 'React', 'Redux', 'MobX', 'Axios', 'Express.js', 'Jest', 'Supertest', 'Testing library', 'nock' ]
 
 export default function About() {
+  const navigate = useNavigate()
   return (
     <Container sx={{ pt: 10 }}>
       <Grid container>
@@ -23,17 +24,12 @@ export default function About() {
               A highly motivated <span style={{color: '#ff9800', fontWeight: 'bold'}}>full stack software developer</span> with a passion for technology and a track record of success in agile project management. Equipped with strong technical skills and a background in engineering, I am taking on new challenges and enhance my experience as a software developer.
           </Typography>
           <Typography variant="h6" sx={{pb: 2}}>
-            After finishing a web development course at Dev Academy, I am doing freelance work as a software developer. Please check out some of work in the <Link to='/projects' style={{color: '#ff9800', fontWeight: 'bold', textDecoration: 'none'}}>Projects</Link> section
+            After finishing a web development course at Dev Academy, I am doing freelance work as a software developer. Please check out some of work in the <Link to='/projects' style={{color: '#ff9800', fontWeight: 'bold', textDecoration: 'none'}}>Projects</Link> section.
           </Typography>
           <Typography variant="h6" sx={{pb: 2}}>
-            Apart from technology, I also love outdoor activities, such as
-            tramping, snowboarding, surfing, tennis, mountaineering and the
-            like. An achievement which I am proud of is the completion of Te
-            Araroa south island part with an extension to Stewart Island. It
-            took me 65 days to complete. If you ask me about it, I will say "it
-            is a fantastic journey and worth all the efforts. If you want to
-            walk it, don’t hesitate and go ahead. Never too late.”
+              I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.
           </Typography>
+          <Button onClick={() => navigate('/contact')} variant="contained" color='primary' size='large' sx={{'&:hover': {color: 'primary'}, fontWeight: 'bold'}}>Contact me</Button>
         </Grid>
         <Grid item xs={1}></Grid>
         <Grid item xs={12} md={5}>
