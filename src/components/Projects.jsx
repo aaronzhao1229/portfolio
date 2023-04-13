@@ -15,7 +15,7 @@ const projects = [
   {
     title: 'Home Base Enamel',
     description:
-      'Home Base Enamels is a torch fired enamel jewellery store and I created their e-commerce website from scratch using full-stack tools.',
+      'Home Base Enamels is a torch fired enamel jewellery store and I am creating their e-commerce website from scratch using full-stack tools.',
     pictureUrl: '/images/projects/HomeBaseEnamels.png',
     tech: [
       'C#',
@@ -32,13 +32,7 @@ const projects = [
     description:
       "This is my personal project to set up a planner for Te Araroa (New Zealand's long distance tramping route, stretching circa 3,000 kilometres along the length of the country's two main islands from Cape Reinga to Bluff).",
     pictureUrl: '/images/projects/TAPlanner.png',
-    tech: [
-      'JavaScript',
-      'Node.js',
-      'React',
-      'Redux',
-      'Tailwind',
-    ],
+    tech: ['JavaScript', 'Node.js', 'React', 'Redux', 'Tailwind'],
     caseStudyLink: 'https://www.youtube.com/watch?v=BOvJCkQsZYo',
   },
   {
@@ -46,13 +40,7 @@ const projects = [
     description:
       'We built a Lost and Found application for our final project at Dev Academy.',
     pictureUrl: '/images/projects/LostAndFound.png',
-    tech: [
-      'JavaScript',
-      'Node.js',
-      'React',
-      'Redux',
-      'Tailwind',
-    ],
+    tech: ['JavaScript', 'Node.js', 'React', 'Redux', 'Tailwind'],
     caseStudyLink: 'https://www.youtube.com/watch?v=1NB-Vsm8bBs',
   },
 ]
@@ -65,7 +53,6 @@ export default function Projects() {
             Projects
           </Typography>
           <Divider
-        
             sx={{
               backgroundColor: 'secondary',
               borderBottomWidth: 5,
@@ -77,68 +64,71 @@ export default function Projects() {
 
         {projects.map((project) => (
           <>
-          <Grid container key={project.title} alignItems="center" sx={{mb: 6}} >
-            <Grid item xs={12} md={6} >
-              <img
-                src={`${project.pictureUrl}`}
-                alt={`${project.title}`}
-                style={{ width: '100%', objectFit: 'fill', display: 'inline-block' }}
+            <Grid
+              container
+              key={project.title}
+              alignItems="center"
+              sx={{ mb: 6 }}
+            >
+              <Grid item xs={12} md={6}>
+                <img
+                  src={`${project.pictureUrl}`}
+                  alt={`${project.title}`}
+                  style={{
+                    width: '100%',
+                    objectFit: 'fill',
+                    display: 'inline-block',
+                  }}
+                />
+              </Grid>
+
+              <Grid item xs={1} md={1}></Grid>
+              <Grid item xs={12} md={5} sx={{ pb: 2 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 3 }}>
+                  {project.title}
+                </Typography>
+                <Typography variant="h6" sx={{ pb: 2 }}>
+                  {project.description}
+                </Typography>
+                <Typography variant="h6" sx={{ pb: 0 }}>
+                  Associated Tech:
+                </Typography>
+                <List
+                  sx={{ width: '100%', maxWidth: 360, pb: 1 }}
+                  aria-label="contacts"
+                >
+                  <Grid container sx={{ pb: 4 }}>
+                    {project.tech.map((tech) => (
+                      <Grid item xs={6}>
+                        <ListItem disablePadding>
+                          <ListItemIcon>
+                            <ArrowRightIcon sx={{ color: 'primary.main' }} />
+                          </ListItemIcon>
+                          <ListItemText primary={`${tech}`} />
+                        </ListItem>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </List>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  sx={{ '&:hover': { color: 'primary' }, fontWeight: 'bold' }}
+                  onClick={() => window.open(`${project.caseStudyLink}`)}
+                >
+                  Case Study
+                </Button>
+              </Grid>
+              <Divider
+                sx={{
+                  backgroundColor: 'primary.dark',
+                  borderBottomWidth: 5,
+                  borderBottomLength: 10,
+                  borderBottomColor: 'primary.dark',
+                }}
               />
             </Grid>
-            
-            <Grid item xs={1} md={1}></Grid>
-            <Grid item xs={12} md={5} sx={{ pb: 2 }}>
-              <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 3 }}>
-                {project.title}
-              </Typography>
-              <Typography variant="h6" sx={{ pb: 2 }}>
-                {project.description}
-              </Typography>
-              <Typography variant="h6" sx={{ pb: 0 }}>
-                Associated Tech:
-              </Typography>
-              <List
-                sx={{ width: '100%', maxWidth: 360, pb: 1 }}
-                aria-label="contacts"
-              >
-                <Grid container sx={{pb: 4}}>
-                  {project.tech.map((tech) => (
-                    <Grid item xs={6}>
-                      <ListItem disablePadding>
-                        <ListItemIcon>
-                          <ArrowRightIcon sx={{ color: 'primary.main' }} />
-                        </ListItemIcon>
-                        <ListItemText primary={`${tech}`} />
-                      </ListItem>
-                    </Grid>
-                  ))}
-                </Grid>
-              </List>
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                sx={{ '&:hover': { color: 'primary' }, fontWeight: 'bold' }}
-                onClick={() =>
-                  window.open(
-                    `${project.caseStudyLink}`
-                  )
-                }
-              >
-                Case Study
-              </Button>
-            </Grid>
-            <Divider
-              
-              sx={{
-                backgroundColor: 'primary.dark',
-                borderBottomWidth: 5,
-                borderBottomLength: 10,
-                borderBottomColor: 'primary.dark',
-              }}
-            />
-          </Grid>
-          
           </>
         ))}
       </Grid>
