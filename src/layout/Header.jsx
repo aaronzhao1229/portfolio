@@ -34,7 +34,7 @@ function ResponsiveAppBar() {
   }
 
   return (
-    <AppBar position="static" elevation={0}>
+    <AppBar position="static" elevation={0} color="secondary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box
@@ -104,10 +104,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               // <Tooltip key={page} disableHoverListener title="Add">
               <Button
+                key={page}
                 onClick={() => navigateTo(page)}
                 sx={{
                   color: 'primary.contrastText',
-                  '& :hover': { color: 'secondary.main' },
+                  '& :hover': { color: 'primary.main' },
                   display: 'block',
                   fontWeight: 'bold',
                   pr: 2,

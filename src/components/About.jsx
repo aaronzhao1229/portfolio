@@ -12,7 +12,7 @@ export default function About() {
           <Typography variant="h4" sx={{ fontWeight: 'bold', pb: 2 }}>
             About Me
           </Typography>
-          <Divider sx={{ backgroundColor: 'secondary', borderBottomWidth: 5, borderBottomLength: 10, borderBottomColor: 'secondary.main'}} />
+          <Divider sx={{ backgroundColor: 'primary', borderBottomWidth: 5, borderBottomLength: 10, borderBottomColor: 'primary.main'}} />
         </Grid>
 
         <Grid item xs={12} md={6} sx={{pb: 2}}>
@@ -43,7 +43,7 @@ export default function About() {
           <Grid container spacing={2} xs={12} sx={{pb: 3}}>
             {skills.map((skill) => (
                 <Grid item xs={4} key={skill}>
-                    <Box sx={{backgroundColor: 'primary.dark', borderRadius: '10px'}} align='center'>
+                    <Box sx={{backgroundColor: 'secondary.dark', borderRadius: '10px'}} align='center'>
                         <Typography sx={{p: 2}}>{skill}</Typography>
                     </Box>
                  </Grid>
@@ -56,7 +56,7 @@ export default function About() {
               <ListItem disablePadding>
                 
                   <ListItemIcon>
-                    <ArrowRightIcon sx={{color: 'secondary.main'}}/>
+                    <ArrowRightIcon sx={{color: 'primary.main'}}/>
                   </ListItemIcon>
                   <ListItemText primary="AWS Certified Cloud Practitioner" />
                 

@@ -1,7 +1,9 @@
 import SideLabel from '../layout/SideLabel'
 import { Button, Grid, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 export default function HomePage() {
+  const navigate = useNavigate()
   return (
     <>
     
@@ -17,7 +19,7 @@ export default function HomePage() {
           <Typography variant='h6' sx={{ mb: 4}}>
           A highly motivated full stack software developer with a passion for technology and a track record of success in agile project management
           </Typography>
-          <Button variant="contained" color='secondary' size='large' sx={{'&:hover': {color: 'primary'}, fontWeight: 'bold'}}>Projects</Button>
+          <Button onClick={() => navigate('/projects')} variant="contained" color='primary' size='large' sx={{'&:hover': {color: 'primary'}, fontWeight: 'bold'}}>Projects</Button>
       
     </Grid>
     

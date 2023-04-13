@@ -27,6 +27,34 @@ const projects = [
     ],
     caseStudyLink: 'https://home-base-enamels.fly.dev',
   },
+  {
+    title: 'Te Araroa Planner',
+    description:
+      "This is my personal project to set up a planner for Te Araroa (New Zealand's long distance tramping route, stretching circa 3,000 kilometres along the length of the country's two main islands from Cape Reinga to Bluff).",
+    pictureUrl: '/images/projects/TAPlanner.png',
+    tech: [
+      'JavaScript',
+      'Node.js',
+      'React',
+      'Redux',
+      'Tailwind',
+    ],
+    caseStudyLink: 'https://www.youtube.com/watch?v=BOvJCkQsZYo',
+  },
+  {
+    title: 'Lost & Found',
+    description:
+      'We built a Lost and Found application for our final project at Dev Academy.',
+    pictureUrl: '/images/projects/LostAndFound.png',
+    tech: [
+      'JavaScript',
+      'Node.js',
+      'React',
+      'Redux',
+      'Tailwind',
+    ],
+    caseStudyLink: 'https://www.youtube.com/watch?v=1NB-Vsm8bBs',
+  },
 ]
 export default function Projects() {
   return (
@@ -37,24 +65,27 @@ export default function Projects() {
             Projects
           </Typography>
           <Divider
+        
             sx={{
               backgroundColor: 'secondary',
               borderBottomWidth: 5,
               borderBottomLength: 10,
-              borderBottomColor: 'secondary.main',
+              borderBottomColor: 'primary.main',
             }}
           />
         </Grid>
 
         {projects.map((project) => (
-          <Grid container key={project.title}>
-            <Grid item xs={12} md={6}>
+          <>
+          <Grid container key={project.title} alignItems="center" sx={{mb: 6}} >
+            <Grid item xs={12} md={6} >
               <img
                 src={`${project.pictureUrl}`}
                 alt={`${project.title}`}
-                style={{ width: '100%', objectFit: 'fill' }}
+                style={{ width: '100%', objectFit: 'fill', display: 'inline-block' }}
               />
             </Grid>
+            
             <Grid item xs={1} md={1}></Grid>
             <Grid item xs={12} md={5} sx={{ pb: 2 }}>
               <Typography variant="h5" sx={{ fontWeight: 'bold', pb: 3 }}>
@@ -67,15 +98,15 @@ export default function Projects() {
                 Associated Tech:
               </Typography>
               <List
-                sx={{ width: '100%', maxWidth: 360, pb: 2 }}
+                sx={{ width: '100%', maxWidth: 360, pb: 1 }}
                 aria-label="contacts"
               >
-                <Grid container>
+                <Grid container sx={{pb: 4}}>
                   {project.tech.map((tech) => (
                     <Grid item xs={6}>
                       <ListItem disablePadding>
                         <ListItemIcon>
-                          <ArrowRightIcon sx={{ color: 'secondary.main' }} />
+                          <ArrowRightIcon sx={{ color: 'primary.main' }} />
                         </ListItemIcon>
                         <ListItemText primary={`${tech}`} />
                       </ListItem>
@@ -85,7 +116,7 @@ export default function Projects() {
               </List>
               <Button
                 variant="contained"
-                color="secondary"
+                color="primary"
                 size="large"
                 sx={{ '&:hover': { color: 'primary' }, fontWeight: 'bold' }}
                 onClick={() =>
@@ -97,7 +128,18 @@ export default function Projects() {
                 Case Study
               </Button>
             </Grid>
+            <Divider
+              
+              sx={{
+                backgroundColor: 'primary.dark',
+                borderBottomWidth: 5,
+                borderBottomLength: 10,
+                borderBottomColor: 'primary.dark',
+              }}
+            />
           </Grid>
+          
+          </>
         ))}
       </Grid>
     </Container>
