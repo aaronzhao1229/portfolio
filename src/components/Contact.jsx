@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { LoadingButton } from '@mui/lab'
 
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'
 import {
   Avatar,
   Box,
@@ -14,7 +14,7 @@ import ContactMailIcon from '@mui/icons-material/ContactMail'
 import emailjs from '@emailjs/browser'
 
 export default function Contact() {
-  const form = useRef();
+  const form = useRef()
   const {
     register,
     handleSubmit,
@@ -24,22 +24,17 @@ export default function Contact() {
   })
 
   function sendEmail() {
-      emailjs
-            .sendForm(
-              'gmail',
-              'contact_form',
-              form.current,
-              '3tqpekwDkHp_fm-Uz'
-            )
-            .then(
-              () => {
-                alert('Message successfully sent!')
-                window.location.reload(false)
-              },
-              () => {
-                alert('Failed to send the message, please try again!')
-              }
-            )
+    emailjs
+      .sendForm('gmail', 'contact_form', form.current, '3tqpekwDkHp_fm-Uz')
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again!')
+        }
+      )
   }
 
   return (
@@ -64,10 +59,7 @@ export default function Contact() {
       <Box
         ref={form}
         component="form"
-        onSubmit={handleSubmit(() =>
-          sendEmail()
-          
-        )}
+        onSubmit={handleSubmit(() => sendEmail())}
         noValidate
         sx={{ mt: 1 }}
       >
@@ -89,7 +81,8 @@ export default function Contact() {
           {...register('email', {
             required: 'email is required',
             pattern: {
-              value: /^\w+[\w-.]*@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/,
+              value:
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
               message: 'Not a valid email address',
             },
           })} // register includes onChange and name
