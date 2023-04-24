@@ -25,7 +25,7 @@ const projects = [
       'Redux',
       'Material UI',
     ],
-    caseStudyLink: 'https://home-base-enamels.fly.dev',
+    caseStudyLink: 'https://home-base-enamels-v1.fly.dev/',
   },
   {
     title: 'Te Araroa Planner',
