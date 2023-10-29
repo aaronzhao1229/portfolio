@@ -2,7 +2,7 @@ import { Container, Grid, Typography, Divider, Box, List, ListItem, ListItemIcon
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import {Link, useNavigate} from 'react-router-dom'
 
-const skills = ['JavaScript (ES6+)', 'TypeScript','Node.js', 'C#', '.NET framework', 'React', 'Redux', 'MobX', 'Axios', 'Express.js', 'Jest', 'Supertest', 'Testing library', 'nock' ]
+const skills = ['JavaScript (ES6+)', 'TypeScript','Node.js', 'C#', '.NET framework', 'React', 'Redux', 'AWS','MobX', 'Axios', 'Express.js', 'Jest', 'Supertest', 'Testing library', 'nock' ]
 
 export default function About() {
   const navigate = useNavigate()

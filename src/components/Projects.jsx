@@ -13,9 +13,25 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 
 const projects = [
   {
+    title: 'Lambda Trampers',
+    description:
+      'The Lambda Trampers and Lambda Latte Walkers are social tramping and walking groups for the LGBTQ+ community, and their friends, living in and around Christchurch. I am creatiing their new website',
+    pictureUrl: '/images/projects/LambdaTramper.png',
+    tech: [
+      'Node.js',
+      'JavaScript',
+      'React',
+      'Redux',
+      'Bootstrape',
+      'Axios',
+      'AWS S3, EC2, Cloudfront, Route 53, SES',
+    ],
+    caseStudyLink: 'http://3.27.185.141:8080/',
+  },
+  {
     title: 'Home Base Enamel',
     description:
-      'Home Base Enamels is a torch fired enamel jewellery store and I am creating their e-commerce website from scratch using full-stack tools.',
+      'Home Base Enamels is a torch fired enamel jewellery store and I have created their e-commerce website from scratch using full-stack tools.',
     pictureUrl: '/images/projects/HomeBaseEnamels.png',
     tech: [
       'C#',
@@ -25,7 +41,7 @@ const projects = [
       'Redux',
       'Material UI',
     ],
-    caseStudyLink: 'https://home-base-enamels-v1.fly.dev/',
+    caseStudyLink: 'https://homebaseenamels.fly.dev/',
   },
   {
     title: 'Te Araroa Planner',
