@@ -26,7 +26,8 @@ const projects = [
       'Axios',
       'AWS S3, EC2, Cloudfront, Route 53, SES',
     ],
-    caseStudyLink: 'http://3.27.185.141:8080/',
+    caseStudyLink:
+      'https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html',
   },
   {
     title: 'Home Base Enamel',
