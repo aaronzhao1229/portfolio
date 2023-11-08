@@ -27,7 +27,7 @@ const projects = [
       'AWS S3, EC2, Cloudfront, Route 53, SES',
     ],
     caseStudyLink:
-      'https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html',
+      'http://lambdatramper-lb-1714983222.ap-southeast-2.elb.amazonaws.com',
   },
   {
     title: 'Home Base Enamel',
